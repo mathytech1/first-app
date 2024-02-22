@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Choice Quesitions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section id="home">
+        <header>
+            Test Your Knowledge
+        </header>
+        <nav>
+            <div class="topdiv">
+                <a href="#" class="topmenu">HOME</a>
+                <a href="#" class="topmenu">ABOUT</a>
+                <a href="#" class="topmenu">CONTACT US</a>
+                <a href="#" class="topmenu">HELP</a>
+            </div>                
+        </nav>
+    </section>
+    <div style="clear: both;"></div>
+    <div id="main">
+        <section class="question">
+            <figure>
+                <img src="Flag_of_Ireland.png" alt="" id="Ireland">
+                <figcaption>Guess the country?</figcaption>
+            </figure>
+            <article>
+                <fieldset>
+                    <legend>Which country's flag is this?</legend>
+                    <input type="radio" id="a" name="mcq" value="Ireland">
+                    <label for="a" id="ir">Ireland</label><br/>
+                    <input type="radio" id="b" name="mcq" value="England">
+                    <label for="b">England</label><br/>
+                    <input type="radio" id="c" name="mcq" value="Ethiopia">
+                    <label for="c">Ethiopia</label><br/>
+                    <input type="radio" id="d" name="mcq" value="Italy">
+                    <label for="d">Italy</label><br/>
+                    <button id="btn">Submit</button><br/>
+                    <script>
+                        const btn = document.querySelector('#btn');
+                        const radioButtons = document.querySelectorAll('input[name="mcq"]');
+
+                        btn.addEventListener("click", () => {
+                            let selectedChoice;
+                            for (const radioButton of radioButtons) {
+                                if (radioButton.checked) {
+                                    selectedChoice = radioButton.value;
+                                    break;
+                                }
+                            }
+                            // Show the output:
+                            if(selectedChoice){
+                                document.getElementById('answer').innerHTML = `Correct! <br/>Answer is ${selectedChoice}`;
+                            }
+                        });
+
+                        
+                        
+                    </script>
+                    <p id="answer"></p>
+                </fieldset>
+            </article>
+        </section>
+    </div>
+    <footer>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, doloribus temporibus, et nesciunt ratione est possimus ab molestias debitis quae adipisci. Mollitia ea, officia assumenda architecto earum fugiat iste adipisci.
+    </footer>
+</body>
+</html>
